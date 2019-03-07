@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>METAR</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,600|Hind" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--<script src="js/weatherRequest.js"></script>-->
+    <!--<script src="js/weatherRequest.js" defer></script>-->
+    <script src="js/addCard.js" defer></script>
+    <script src="js/resizeLastRow.js"></script>
+</head>
+<body>
+    <div class="weather-card static" id="add_card">
+        <div class="weather-card-inner">
+            <div class="input" id="search">
+                <form autocomplete="off">
+                    <input type="text" id="airport-input" placeholder="Enter valid ICAO">
+                    <input type="button" id="submit-button" value="Get weather" onclick="add()">
+                </form>
+            </div>
+            <div id="add-button">
+                <img src="icons/static/plus.svg" alt="add button" onclick="search()">
+            </div>
+        </div>
+    </div>
+    <!--<div id="last-element"></div>-->
+</body>
+</html>

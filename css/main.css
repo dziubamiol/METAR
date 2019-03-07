@@ -1,0 +1,209 @@
+body {
+    margin: 0;
+    font-family: 'Dosis', sans-serif;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+#last-element {
+    content: "";
+    width: 320px;
+    height: 0px;
+    margin: 20px 10px 0 10px;
+}
+
+.weather-card {
+    width: 320px;
+    height: 194px;
+    margin: 20px 10px 0 10px;
+
+}
+
+.weather-card-inner {
+    position: relative;
+    width: 300px;
+    height: 174px;
+    padding: 10px;
+    border-radius: 5px;
+
+    background-color: #F2F2F2;
+    font-size: 20px;
+    font-weight: 600;
+
+    -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
+    -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
+
+    transition: transform .2s, box-shadow .2s;
+    transform-style: preserve-3d;
+}
+
+.flip .weather-card-inner {
+    transform: rotateY(180deg);
+    -webkit-box-shadow: -2px 2px 3px rgba(0, 0, 0, .4);
+    -moz-box-shadow: -2px 2px 3px rgba(0, 0, 0, .4);
+    box-shadow: -2px 2px 3px rgba(0, 0, 0, .4);
+    transform-style: preserve-3d;
+}
+
+.weather-content-face {
+    z-index: 2;
+    transform: rotateY(0deg);
+    opacity: 0.1;
+}
+
+.weather-content-back {
+    transform: rotateY(180deg);
+}
+
+.weather-content-face, .weather-content-back {
+    position: absolute;
+    width: 300px;
+    height: 174px;
+    /*backface-visibility: hidden;*/
+}
+
+.graphics {
+    backface-visibility: hidden;
+}
+
+.airport {
+    text-align: center;
+}
+
+.airport.full-name{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.data-wrapper {
+    display: inline-flex;
+    width: 100%;
+}
+
+.normal {
+    font-family: 'Hind', sans-serif;
+    line-height: 20px;
+    font-size: 17px;
+    font-weight: 400;
+}
+
+.metar {
+    margin: 30px auto 0 auto;
+    text-align: center;
+}
+
+.graphics {
+    margin-left: auto;
+}
+
+.weather {
+    height: 64px;
+    width: 64px;
+    position: relative;
+}
+
+.weather img {
+    position: absolute;
+    top: -32px;
+    left: -32px;
+    width: 128px;
+    height: 128px;
+}
+
+.wind {
+    width: 30px;
+    height: 30px;
+    margin: 15px auto;
+}
+
+.flight-rules {
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 330px){
+    .weather-card {
+        max-width: 250px;
+    }
+}
+
+#loading {
+    position: absolute;
+    left: 135px;
+    top: 72px;
+    width: 50px;
+    height: 50px;
+}
+
+#loading img {
+    width: 50px;
+}
+
+.wind-dir {
+    transition: transform 2s;
+    /*transform: rotateZ(-45deg);*/
+}
+
+#add-button {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 72px;
+    left: 135px;
+}
+
+#add-button img {
+    width: inherit;
+    height: inherit;
+    opacity: 0.5;
+}
+
+.static:hover .weather-card-inner{
+    transform: rotateY(0deg);
+    -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
+    -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
+}
+
+.input {
+    margin: auto;
+    visibility: hidden;
+}
+
+.input form {
+    margin: 46px auto;
+    text-align: center;
+}
+
+#airport-input {
+    width: 200px;
+    height: 30px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 5px;
+    border: 0;
+    text-align: center;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-family: 'Dosis', sans-serif;
+
+}
+
+#submit-button {
+    width: 100px;
+    height: 30px;
+    background-color: #A5A5A5;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#submit-button:focus {
+    outline: 0;
+}
+
+#add-button {
+    transition: opacity .1s, visibility .1s;
+    cursor: pointer;
+}
