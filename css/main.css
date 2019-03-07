@@ -1,9 +1,16 @@
 body {
     margin: 0;
     font-family: 'Dosis', sans-serif;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 #last-element {
@@ -32,29 +39,40 @@ body {
     font-weight: 600;
 
     -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
-    -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
 
+    -webkit-transition: -webkit-transform .2s, -webkit-box-shadow .2s;
+    transition: -webkit-transform .2s, -webkit-box-shadow .2s;
+    -o-transition: transform .2s, box-shadow .2s;
     transition: transform .2s, box-shadow .2s;
-    transform-style: preserve-3d;
+    transition: transform .2s, box-shadow .2s, -webkit-transform .2s, -webkit-box-shadow .2s;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
 }
 
 .flip .weather-card-inner {
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
     -webkit-box-shadow: -2px 2px 3px rgba(0, 0, 0, .4);
-    -moz-box-shadow: -2px 2px 3px rgba(0, 0, 0, .4);
     box-shadow: -2px 2px 3px rgba(0, 0, 0, .4);
-    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+
+.flip .weather-content-face {
+    /*backface-visibility: hidden;*/
 }
 
 .weather-content-face {
     z-index: 2;
-    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
     opacity: 0.1;
 }
 
 .weather-content-back {
-    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+            transform: rotateY(180deg);
 }
 
 .weather-content-face, .weather-content-back {
@@ -65,7 +83,8 @@ body {
 }
 
 .graphics {
-    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
 }
 
 .airport {
@@ -78,6 +97,8 @@ body {
 }
 
 .data-wrapper {
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
     display: inline-flex;
     width: 100%;
 }
@@ -142,7 +163,11 @@ body {
 }
 
 .wind-dir {
+    -webkit-transition: -webkit-transform 2s;
+    transition: -webkit-transform 2s;
+    -o-transition: transform 2s;
     transition: transform 2s;
+    transition: transform 2s, -webkit-transform 2s;
     /*transform: rotateZ(-45deg);*/
 }
 
@@ -161,9 +186,9 @@ body {
 }
 
 .static:hover .weather-card-inner{
-    transform: rotateY(0deg);
+    -webkit-transform: rotateY(0deg);
+            transform: rotateY(0deg);
     -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
-    -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
     box-shadow: 2px 2px 3px rgba(0, 0, 0, .4);
 }
 
@@ -204,6 +229,8 @@ body {
 }
 
 #add-button {
+    -webkit-transition: opacity .1s, visibility .1s;
+    -o-transition: opacity .1s, visibility .1s;
     transition: opacity .1s, visibility .1s;
     cursor: pointer;
 }
